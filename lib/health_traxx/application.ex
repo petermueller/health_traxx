@@ -6,9 +6,12 @@ defmodule HealthTraxx.Application do
   use Application
 
   def start(_type, _args) do
+    # TODO - decide what supervision mode and order. Prob just one_for_all to start, but potentially rest_for_one once things are built
+
     children = [
-      # Starts a worker by calling: HealthTraxx.Worker.start_link(arg)
-      # {HealthTraxx.Worker, arg}
+      {HealthTraxx.Repo, []},
+      {HealthTraxx.ProcedurePolling.Loader, []},
+      {HealthTraxx.ProcedurePolling.Supervisor, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
