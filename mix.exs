@@ -7,6 +7,7 @@ defmodule HealthTraxx.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -25,6 +26,15 @@ defmodule HealthTraxx.MixProject do
       {:ecto_sql, "~> 3.3"},
       {:postgrex, "~> 0.15.3"},
       {:jason, "~> 1.1"}
+    ]
+  end
+
+  defp aliases do
+    [
+      "ecto.seed": ["run priv/repo/seeds.exs"],
+      "ecto.setup": ["ecto.create", "ecto.migrate", "ecto.seed"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end

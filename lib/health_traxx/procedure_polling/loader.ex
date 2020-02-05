@@ -4,6 +4,7 @@ defmodule HealthTraxx.ProcedurePolling.Loader do
   def start_link(_) do
     GenServer.start_link(__MODULE__, [])
   end
+
   def init(_arg) do
     # TODO - replace with loading from data store and change as we get timestamps and such
 
@@ -21,7 +22,10 @@ defmodule HealthTraxx.ProcedurePolling.Loader do
         sigma: %{id: "6482", avg_reimb: "443.21"}
       },
       "Lobotomy" => %{
-        pumana: %{id: "cccc7d8f-ed9a-4729-b595-c4fd405ee66b", reimbursement_amount: :not_reimbursed},
+        pumana: %{
+          id: "cccc7d8f-ed9a-4729-b595-c4fd405ee66b",
+          reimbursement_amount: :not_reimbursed
+        },
         dcds: %{id: "lobotomy", refund: "0.56"},
         sigma: %{id: "1375", avg_reimb: "1.06"}
       },
