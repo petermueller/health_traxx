@@ -25,7 +25,8 @@ defmodule HealthTraxx.MixProject do
     [
       {:ecto_sql, "~> 3.3"},
       {:postgrex, "~> 0.15.3"},
-      {:jason, "~> 1.1"}
+      {:jason, "~> 1.1"},
+      {:gen_state_machine, "~> 2.1"}
     ]
   end
 
