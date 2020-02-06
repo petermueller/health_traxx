@@ -2,11 +2,11 @@
 
 - [x] add ecto starter bits
 - [x] add poll worker
+- [x] persist from a single poll
 - [ ] determine/add scheduling of polls
-- [ ] add Protocol for requesting client data
-  - [ ] add implementations for each payor data struct
 - [x] add `external_payor_id` to `payor_procedures`
-- [ ] add `procedure_endpoint` to `payors`
+- [ ] add `procedure_endpoint` field to `payors`
+  - for use with `PayorClient` (also tbd)
 
 
 ## Nice to haves
