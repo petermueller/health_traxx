@@ -2,13 +2,13 @@ defmodule HealthTraxx.Reimbursements.Payor do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias HealthTraxx.Reimbursements.Procedure
   alias HealthTraxx.Reimbursements.PayorProcedure
 
   schema "payors" do
     field(:name, :string)
 
-    many_to_many(:procedures, Procedure, join_through: PayorProcedure)
+    has_many(:payor_procedures, PayorProcedure)
+    has_many(:procedures, through: [:payor_procedures, :procedure])
 
     timestamps()
   end

@@ -8,7 +8,7 @@ defmodule HealthTraxx.ProcedurePolling.Supervisor do
   end
 
   def init(_) do
-    Reimbursements.list_procedures_with_payors()
+    Reimbursements.list_current_reimbursable_procedure_amounts()
     |> Enum.map(& {HealthTraxx.ProcedurePolling.PollTracker, &1})
     |> Supervisor.init(strategy: :one_for_one)
   end

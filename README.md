@@ -26,3 +26,10 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/health_traxx](https://hexdocs.pm/health_traxx).
+
+## Starting the app
+Assuming you have Elixir...
+
+1. `mix deps.get`
+2. `mix ecto.setup`
+3. `mix run --no-halt` (`ctrl-c` twice, or `ctrl-\` to quit)
