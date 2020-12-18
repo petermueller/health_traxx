@@ -4,6 +4,14 @@
 - [x] add poll worker
 - [x] persist from a single poll
 - [ ] determine/add scheduling of polls
+  - Could use a cron-like string stored on the `procedure`
+    - con: Would potentially be a pain to find (or have to implement) parsing the cron string
+    -  Then just do Process.send_at, or a state_timeout (if using `gen_statem`)
+  - Could use db records of scheduled times
+    - pro: scheduling code is simpler
+    - con: more load and dependence on the db
+    - con: less obvious what the "schedule" is for a given procedure
+  - Could investigate Oban (never used) or Quantum (seen implemented poorly)
 - [x] add `external_payor_id` to `payor_procedures`
 - [ ] add `procedure_endpoint` field to `payors`
   - for use with `PayorClient` (also tbd)

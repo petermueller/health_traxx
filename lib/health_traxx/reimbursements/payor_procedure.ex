@@ -5,12 +5,12 @@ defmodule HealthTraxx.Reimbursements.PayorProcedure do
   alias HealthTraxx.Reimbursements.{Payor, Procedure, ReimbursementAmount}
 
   schema "payors_procedures" do
-    field :external_id, :string
-    field :check_reimbursability, :boolean
+    field(:external_id, :string)
+    field(:check_reimbursability, :boolean)
 
-    belongs_to :payor, Payor
-    belongs_to :procedure, Procedure
-    has_many :reimbursement_amounts, ReimbursementAmount
+    belongs_to(:payor, Payor)
+    belongs_to(:procedure, Procedure)
+    has_many(:reimbursement_amounts, ReimbursementAmount)
 
     timestamps()
   end

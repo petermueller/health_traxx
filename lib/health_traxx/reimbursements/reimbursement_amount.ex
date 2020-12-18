@@ -5,10 +5,10 @@ defmodule HealthTraxx.Reimbursements.ReimbursementAmount do
   alias HealthTraxx.Reimbursements.PayorProcedure
 
   schema "reimbursement_amounts" do
-    field :amount, :decimal
-    field :replaced_at, :utc_datetime_usec
+    field(:amount, :decimal)
+    field(:replaced_at, :utc_datetime_usec)
 
-    belongs_to :payor_procedure, PayorProcedure
+    belongs_to(:payor_procedure, PayorProcedure)
 
     timestamps()
   end
